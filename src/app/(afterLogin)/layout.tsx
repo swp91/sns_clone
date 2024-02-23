@@ -3,8 +3,10 @@ import style from "./layout.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import ZLogo from "../../../public/zlogo.png";
+import NavMenu from "./_component/NavMenu";
+import LogoutButton from "./_component/LogoutButton";
 
-const layout = ({ children }: { children: ReactNode }) => {
+const AfterLoginLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className={style.container}>
       <header className={style.leftSectionWrapper}>
@@ -15,6 +17,15 @@ const layout = ({ children }: { children: ReactNode }) => {
                 <Image src={ZLogo} alt="로고" width={40} height={40} />
               </div>
             </Link>
+            <nav>
+              <ul>
+                <NavMenu />
+              </ul>
+              <Link href="/compose/tweet" className={style.postButton}>
+                게시하기
+              </Link>
+            </nav>
+            <LogoutButton />
           </div>
         </section>
       </header>
@@ -37,4 +48,4 @@ const layout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default layout;
+export default AfterLoginLayout;
