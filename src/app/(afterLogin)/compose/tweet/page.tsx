@@ -1,7 +1,5 @@
-import React from "react";
+import Home from "@/app/(afterLogin)/home/page";
 
-const page = () => {
-  return <div></div>;
-};
-
-export default page;
+export default function Page() {
+  return <Home />;
+}
